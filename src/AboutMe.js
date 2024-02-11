@@ -1,10 +1,10 @@
 import {useContext, useEffect, useState} from "react";
-import {LanguageContext} from "./Language";
+import {LanguageContext} from "./LanguageContext";
 
 function AboutMe() {
-    const language = useContext(LanguageContext);
     const adjectives = ["programmer", "web developer", "hacker", "scientist"];
     const baseText = "";
+    const {languageData} = useContext(LanguageContext);
 
     const [presentation, setPresentation] = useState(baseText);
     const [typing, setTyping] = useState(true);
@@ -37,10 +37,12 @@ function AboutMe() {
 
     return(
         <div className="about-me ml-10">
-            <h1 className="text-6xl text-white mt-[8rem]">{language.aboutMe.presentation} {presentation}<span>|</span><span
+            <h1 className="text-6xl text-white mt-[8rem]">
+                {languageData.aboutMe.presentation} {presentation}
+                <span>|</span><span
                 className="bg-gray-100 text-black">{selectedText}</span></h1>
             <h1 className="text-6xl text-white mt-[5rem]">I am Lilith Díaz</h1>
-            <p className="text-xl text-white ml-[12rem] mt-4">(@pinktaty)</p>
+            <p className="text-xl text-white ml-[12rem] mt-4 hover:text-fuchsia-300"><a href="https://github.com/pinktaty" target="_blank" rel="noopener noreferrer">@pinktaty</a></p>
         </div>
     );
 }

@@ -73,7 +73,7 @@ function Projects({setBodyColor}) {
     return(
         <div
             onClick={() => updateClick()}
-            className="projects justify-center flex h-[37rem] items-center"
+            className="projects justify-center flex h-screen items-center"
         >
             <div
                 onMouseEnter={() => updateHover()}
