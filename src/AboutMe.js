@@ -6,15 +6,10 @@ function AboutMe() {
     const adjectives = ["programmer", "web developer", "hacker", "scientist"];
     const baseText = "";
 
-    // Use states to manage the variables that affect the component's renderization
     const [presentation, setPresentation] = useState(baseText);
-    // State that tells if the function will write or delete
     const [typing, setTyping] = useState(true);
-    // State that preserves the selected text
     const [selectedText, setSelectedText] = useState(baseText);
-    // Index of array adjectives
     const [indexAdjectives, setIndexAdjectives] = useState(0);
-    // Index of the letters from an object from the array adjectives
     const [indexWord, setIndexWord] = useState(0);
 
     useEffect(() => {
@@ -37,8 +32,7 @@ function AboutMe() {
                 }
             }
         }
-
-        setTimeout(animation, 220);
+        setTimeout(animation, 200);
     });
 
     return(
