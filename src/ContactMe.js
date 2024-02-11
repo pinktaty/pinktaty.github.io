@@ -1,7 +1,9 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {LanguageContext} from "./LanguageContext";
 
 function ContactMe() {
     const [open, setOpen] = useState(false);
+    const {languageData} = useContext(LanguageContext);
 
     const toggleMenu = () => {
         setOpen(!open);
@@ -9,7 +11,7 @@ function ContactMe() {
 
     return (
         <div className="relative inline-block text-left">
-            <button onClick={toggleMenu} className="flex items-center mr-1.5">Contact me</button>
+            <button onClick={toggleMenu} className="flex items-center mr-1.5">{languageData.contactMe.title}</button>
             <div className={`${open ? 'block' : 'hidden'} absolute mt-3 w-22`}>
                 <a href="https://www.linkedin.com/in/diaz-lilith04" target="_blank" rel="noopener noreferrer">
                   <button onClick={() => toggleMenu()}

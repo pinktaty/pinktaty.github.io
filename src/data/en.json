@@ -1,8 +1,10 @@
 {
+  "definition": "en",
   "aboutMe": {
+    "title": "About me",
+    "adjectives": ["programmer", "web developer", "scientist"],
     "presentation": "I am a ",
-    "description": "Hello! I am Lilith Díaz....",
-    "skills": ["Programming", "Web Development", "React", "JavaScript"],
+    "description": "I am ",
     "interests": ["Technology", "Art", "Reading"]
   },
   "projects": {
@@ -20,34 +22,11 @@
       }
     ]
   },
-  "cv": {
-    "title": "Curriculum Vitae",
-    "experience": [
-      {
-        "position": "Software Developer",
-        "company": "Tech Co.",
-        "year": "2022-present"
-      },
-      {
-        "position": "Intern",
-        "company": "Web Solutions",
-        "year": "2021-2022"
-      }
-    ],
-    "education": [
-      {
-        "degree": "Bachelor's in Computer Science",
-        "school": "University XYZ",
-        "year": "2018-2022"
-      }
-    ]
-  },
   "contactMe": {
-    "title": "Contact Me",
-    "email": "lilith@example.com",
-    "socialMedia": {
-      "linkedin": "",
-      "github": "lilithdiaz"
-    }
+    "title": "Contact me"
+  },
+  "language": {
+    "title": "Language",
+    "types": ["English", "Spanish", "Norwegian"]
   }
 }

@@ -1,4 +1,5 @@
-import {useCallback, useEffect, useRef, useState} from "react";
+import {useCallback, useContext, useEffect, useRef, useState} from "react";
+import {LanguageContext} from "./LanguageContext";
 
 function Projects({setBodyColor}) {
     const timeOutFirstAnimation = useRef(null);
@@ -6,10 +7,12 @@ function Projects({setBodyColor}) {
     const colors = ['#F59AF0', '#A980E4', '#59B4C3', '#A2E4A2', '#FDFFA3', 'black'];
 
     const [indexProject, setIndexProject] = useState(0);
-    const [degreesProject, setDegreesProject] = useState([0, 352, 344, 336, 328]);
+    const [degreesProject, setDegreesProject] = useState([0, 354, 348, 342, 336]);
     const [gotHovered, setGotHovered] = useState(false);
     const [upProject, setUpProject] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
+
+    const {languageData} = useContext(LanguageContext);
 
     const updateClick = () => {
         if(!isClicked){
@@ -26,7 +29,7 @@ function Projects({setBodyColor}) {
 
     const completeAnimation = useCallback( () => {
         setBodyColor(colors[indexProject]);
-        if (degreesProject[indexProject] < 360) {
+        if (degreesProject[indexProject] < 330) {
             timeOutCompleteAnimation.current = setTimeout(() => {
                 setDegreesProject(prevState => {
                     const newDegrees = [...prevState];
@@ -69,6 +72,12 @@ function Projects({setBodyColor}) {
             }
         }
     }, [isClicked, gotHovered, indexProject, completeAnimation, hoverAnimation]);
+
+    // TODO: realmente sólo necesito objetos que reciban los parametros grados
+    // TODO: y color
+
+    // TODO: volver todos los divs en componentes para poder tener una array que manejar
+    // TODO: con el objetivo de poder manejar sus posiciones dinamicamente
 
     return(
         <div

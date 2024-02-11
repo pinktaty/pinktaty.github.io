@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {HashRouter} from "react-router-dom";
+import LanguageProvider from "./LanguageContext";
 
 createRoot(document.getElementById('root')).render(
     <HashRouter>
+        <LanguageProvider>
             <App />
+        </LanguageProvider>
     </HashRouter>
 );
 
