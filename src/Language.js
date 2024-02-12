@@ -23,18 +23,18 @@ function MenuLanguages() {
             <div className={`${open ? 'block': 'hidden'} absolute mt-2 right-0 w-22 sm:mt-3`}>
                 <button onClick={() => changeLanguageAux("en")}
                         className="sm:my-1 w-full text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
-                    <img className="w-5" src='/es.svg' alt={`${languageData.language.types[0]}`}/>
-                    es
+                    <img className="w-5 absolute" src='/en.svg' alt={`${languageData.language.types[1]}`}/>
+                    <span className="ml-4">en</span>
                 </button>
                 <button onClick={() => changeLanguageAux("es")}
-                        className="sm:my-1 w-full text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
-                    <img className="w-5" src='/en.svg' alt={`${languageData.language.types[1]}`}/>
-                    en
+                        className="sm:my-1 w-full text-center justify-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
+                    <img className="w-5 absolute" src='/es.svg' alt={`${languageData.language.types[0]}`}/>
+                    <span className="ml-4">es</span>
                 </button>
                 <button onClick={() => changeLanguageAux("no")}
-                        className="sm:my-1 w-full text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
-                    <img className="w-5" src='/no.svg' alt={`${languageData.language.types[2]}`}/>
-                    no
+                        className=" sm:my-1 w-full text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
+                    <img className="w-5 absolute" src='/no.svg' alt={`${languageData.language.types[2]}`}/>
+                    <span className="ml-4">no</span>
                 </button>
             </div>
         </div>
