@@ -17,25 +17,26 @@ function MenuLanguages() {
 
     const {languageData} = useContext(LanguageContext);
 
+    const buttonGenerator = (languages) => {
+        const buttons = [];
+        for(let i = 0; i < languages.length; i++) {
+            buttons.push(
+                <button onClick={() => changeLanguageAux(`${languageData.language.definition}`)}
+                        className="sm:my-1 w-full text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
+                    <img className="w-5 absolute" src={`/${languages[i]}.svg`} alt={`${languageData.language.types[i]}`}/>
+                    <span className="ml-4">{languages[i]}</span>
+                </button>
+            );
+        }
+        return buttons;
+    }
+
     return (
         <div className="relative inline-block text-left">
-            <button onClick={toggleMenu} className="flex items-center mr-1.5 font-mono">{languageData.language.title}</button>
-            <div className={`${open ? 'block': 'hidden'} absolute mt-2 right-0 w-22 sm:mt-3`}>
-                <button onClick={() => changeLanguageAux("en")}
-                        className="sm:my-1 w-full text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
-                    <img className="w-5 absolute" src='/en.svg' alt={`${languageData.language.types[1]}`}/>
-                    <span className="ml-4">en</span>
-                </button>
-                <button onClick={() => changeLanguageAux("es")}
-                        className="sm:my-1 w-full text-center justify-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
-                    <img className="w-5 absolute" src='/es.svg' alt={`${languageData.language.types[0]}`}/>
-                    <span className="ml-4">es</span>
-                </button>
-                <button onClick={() => changeLanguageAux("no")}
-                        className=" sm:my-1 w-full text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
-                    <img className="w-5 absolute" src='/no.svg' alt={`${languageData.language.types[2]}`}/>
-                    <span className="ml-4">no</span>
-                </button>
+            <button onClick={toggleMenu}
+                    className="flex items-center mr-1.5 font-mono">{languageData.language.title}</button>
+            <div className={`${open ? 'block' : 'hidden'} absolute mt-2 right-0 w-22 sm:mt-3`}>
+                {buttonGenerator(["en", "es", "no"])}
             </div>
         </div>
     );
