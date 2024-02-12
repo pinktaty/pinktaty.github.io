@@ -19,11 +19,11 @@ function MenuLanguages() {
 
     return (
         <div className="relative inline-block text-left">
-            <button onClick={toggleMenu} className="flex items-center mr-1.5">{languageData.language.title}</button>
+            <button onClick={toggleMenu} className="flex items-center mr-1.5 font-mono">{languageData.language.title}</button>
             <div className={`${open ? 'block': 'hidden'} absolute right-0 mt-3 w-22`}>
-                <button onClick={() => changeLanguageAux("en")} className=" w-full my-1  text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white">{languageData.language.types[0]}</button>
-                <button onClick={() => changeLanguageAux("es")} className="w-full my-1 text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white">{languageData.language.types[1]}</button>
-                <button onClick={() => changeLanguageAux("no")} className="w-full my-1 text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white">{languageData.language.types[2]}</button>
+                <button onClick={() => changeLanguageAux("en")} className=" w-full my-1  text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">{languageData.language.types[0]}</button>
+                <button onClick={() => changeLanguageAux("es")} className="w-full my-1 text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">{languageData.language.types[1]}</button>
+                <button onClick={() => changeLanguageAux("no")} className="w-full my-1 text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">{languageData.language.types[2]}</button>
             </div>
         </div>
     );

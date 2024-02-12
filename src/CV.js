@@ -19,7 +19,7 @@ function CV() {
 
     return (
         <div className="relative inline-block text-left">
-            <button onClick={toggleMenu} className="flex items-center mr-1.5">CV</button>
+            <button onClick={toggleMenu} className="flex items-center mr-1.5 font-mono">CV</button>
             <div className={`${open ? 'block' : 'hidden'} absolute mt-3 w-22`}>
                 <button onClick={() => download()}
                         className="w-full rounded-md hover:bg-gray-600 p-0.5">

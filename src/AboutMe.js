@@ -45,14 +45,12 @@ function AboutMe() {
     }, [typing, indexWord, indexAdjectives, adjectives, presentation]);
 
     return(
-        <div className="about-me ml-10">
-            <h1 className="text-6xl text-white mt-[8rem]">
+        <div className="about-me ml-9">
+            <h1 className="md:text-3xl text-xl text-white mt-[10rem] font-press-start mr-7">
                 {languageData.aboutMe.presentation} {presentation}
                 <span>|</span><span
-                className="bg-gray-100 text-black">{selectedText}</span></h1>
-            <h1 className="text-6xl text-white mt-[5rem]">{languageData.aboutMe.description} Lilith Díaz</h1>
-            // TODO: add next line to Contact Me
-            <p className="text-xl text-white ml-[12rem] mt-4 hover:text-fuchsia-300"><a href="https://github.com/pinktaty" target="_blank" rel="noopener noreferrer">@pinktaty</a></p>
+                className="bg-gray-100 text-black font-press-start">{selectedText}</span></h1>
+            <h1 className="md:text-3xl text-xl  text-white mt-[5rem] mr-7 font-press-start">{languageData.aboutMe.description} Lilith Díaz</h1>
         </div>
     );
 }

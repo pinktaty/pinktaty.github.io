@@ -1,11 +1,14 @@
 import {useCallback, useContext, useEffect, useRef, useState} from "react";
 import {LanguageContext} from "./LanguageContext";
+import ProjectCircle from "./ProjectCircle";
 
 function Projects({setBodyColor}) {
     const timeOutFirstAnimation = useRef(null);
     const timeOutCompleteAnimation = useRef(null);
     const colors = ['#F59AF0', '#A980E4', '#59B4C3', '#A2E4A2', '#FDFFA3', 'black'];
 
+    // Index Project es para saber quien es el proyector principal
+    // (el que se muestra hasta el frente en el momento).
     const [indexProject, setIndexProject] = useState(0);
     const [degreesProject, setDegreesProject] = useState([0, 354, 348, 342, 336]);
     const [gotHovered, setGotHovered] = useState(false);
@@ -13,6 +16,24 @@ function Projects({setBodyColor}) {
     const [isClicked, setIsClicked] = useState(false);
 
     const {languageData} = useContext(LanguageContext);
+
+
+    const createCircles = () => {
+    const elements = [];
+    for (let i = 0, j = 6; i < 6 && j > 0; i++, j--) {
+        elements.push(
+            <ProjectCircle
+                backgroundColor={colors[j]}
+                transformOrigin="12% 20%"
+                transform={`rotate(${""}deg)`}
+                onMouseEnter={updateHover}
+            />
+        );
+    }
+
+    return elements;
+
+    }
 
     const updateClick = () => {
         if(!isClicked){
@@ -84,51 +105,16 @@ function Projects({setBodyColor}) {
             onClick={() => updateClick()}
             className="projects justify-center flex h-screen items-center"
         >
-            <div
-                onMouseEnter={() => updateHover()}
-                className="absolute circle rounded-full w-[24rem] h-[24rem] items-center flex justify-center"
-                style={{backgroundColor: colors[indexProject+4], transformOrigin: "12% 20%", transform: `rotate(${degreesProject[4]}deg)`}}
-            >
-                <div>
-                    <h1 className="text-black">Projects</h1>
-                </div>
-            </div>
-            <div
-                onMouseEnter={() => updateHover()}
-                className="absolute circle rounded-full w-[24rem] h-[24rem] items-center flex justify-center"
-                style={{backgroundColor: colors[indexProject+3], transformOrigin: "12% 20%", transform: `rotate(${degreesProject[3]}deg)`}}
-            >
-                <div>
-                    <h1 className="text-black">Projects</h1>
-                </div>
-            </div>
-            <div
-                onMouseEnter={() => updateHover()}
-                className="absolute circle rounded-full w-[24rem] h-[24rem] items-center flex justify-center"
-                style={{backgroundColor: colors[indexProject+2], transformOrigin: "12% 20%", transform: `rotate(${degreesProject[2]}deg)`}}
-            >
-                <div>
-                    <h1 className="text-black">Projects</h1>
-                </div>
-            </div>
-            <div
-                onMouseEnter={() => updateHover()}
-                className="absolute circle rounded-full w-[24rem] h-[24rem] items-center flex justify-center"
-                style={{backgroundColor: colors[indexProject+1], transformOrigin: "12% 20%", transform: `rotate(${degreesProject[1]}deg)`}}
-            >
-                <div>
-                    <h1 className="text-black">Projects</h1>
-                </div>
-            </div>
-            <div
-                onMouseEnter={() => updateHover()}
-                className="absolute circle rounded-full w-[24rem] h-[24rem] items-center flex justify-center"
-                style={{backgroundColor: colors[indexProject], transformOrigin: "12% 20%", transform: `rotate(${degreesProject[0]}deg)`}}
-            >
-                <div>
-                    <h1 className="text-black">Projects</h1>
-                </div>
-            </div>
+            <>
+                {[...Array(5)].map((_, i) => (
+                    <ProjectCircle
+                        backgroundColor={colors[-i]}
+                        transformOrigin="12% 20%"
+                        transform={`rotate(${""}deg)`}
+                        onMouseEnter={updateHover}
+                    />
+                ))}
+            </>
         </div>
     );
 }

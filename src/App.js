@@ -19,12 +19,12 @@ function App() {
       >
           <nav className="navbar p-8">
             <div>
-                <ul className="flex space-x-8 justify-end text-white sm:flex">
-                    <li className="list-none"><NavLink to="/">{languageData.aboutMe.title}</NavLink></li>
-                    <li className="list-none"><NavLink to="/Projects">{languageData.projects.title}</NavLink></li>
-                    <li className="list-none"><CV /></li>
-                    <li className="list-none"><ContactMe /></li>
-                    <li className="list-none"><MenuLanguages /></li>
+                <ul className="sm:space-x-8 justify-end text-white sm:flex">
+                    <li className="list-none font-mono mt-1.5 sm:mt-0"><NavLink to="/">{languageData.aboutMe.title}</NavLink></li>
+                    <li className="list-none font-mono mt-1.5 sm:mt-0"><NavLink to="/Projects">{languageData.projects.title}</NavLink></li>
+                    <li className="list-none mt-1.5 sm:mt-0"><CV /></li>
+                    <li className="list-none mt-1.5 sm:mt-0"><ContactMe /></li>
+                    <li className="list-none mt-1.5 sm:mt-0"><MenuLanguages /></li>
                 </ul>
             </div>
           </nav>
