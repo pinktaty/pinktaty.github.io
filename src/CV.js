@@ -20,10 +20,10 @@ function CV() {
     return (
         <div className="relative inline-block text-left">
             <button onClick={toggleMenu} className="flex items-center mr-1.5 font-mono">CV</button>
-            <div className={`${open ? 'block' : 'hidden'} absolute mt-3 w-22`}>
+            <div className={`${open ? 'block' : 'hidden'} inline-block mt-1 w-22 sm:absolute sm:mt-3`}>
                 <button onClick={() => download()}
                         className="w-full rounded-md hover:bg-gray-600 p-0.5">
-                    <img src='/download.svg' alt="download"/>
+                    <img className="h-5" src='/download.svg' alt="download"/>
                 </button>
             </div>
         </div>
