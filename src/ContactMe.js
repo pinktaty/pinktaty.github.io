@@ -16,13 +16,13 @@ function ContactMe() {
                 <a href="https://www.linkedin.com/in/diaz-lilith04" target="_blank" rel="noopener noreferrer">
                     <button onClick={() => toggleMenu()}
                             className="rounded-md hover:bg-gray-600 p-1.5 sm:ml-6">
-                        <img className="w-5" src='/linkedin.svg' alt="linkedin"/>
+                        <img className="w-5 ml-2" src='/linkedin.svg' alt="linkedin"/>
                     </button>
                 </a>
                 <a href="https://github.com/pinktaty" target="_blank" rel="noopener noreferrer">
                     <button onClick={() => toggleMenu()}
                             className="ml-2 rounded-md hover:bg-gray-600 p-1 sm:ml-6 sm:mt-2">
-                        <img className="w-6" src='/github.svg' alt="github"/>
+                        <img className="w-6 ml-2" src='/github.svg' alt="github"/>
                     </button>
                 </a>
             </div>

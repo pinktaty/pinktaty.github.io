@@ -19,12 +19,14 @@ function MenuLanguages() {
 
     const createButtons = (languages) => {
         const buttons = [];
+        const marginLeft = languageData.definition === "no" ? 8 : 4;
         for(let i = 0; i < languages.length; i++) {
+            console.log(languageData.definition)
             buttons.push(
-                <button onClick={() => changeLanguageAux(`${languageData.language.definition}`)}
+                <button onClick={() => changeLanguageAux(`${languages[i]}`)}
                         className="sm:my-1 w-full text-center rounded-md p-1.5 text-sm hover:bg-gray-600 hover:text-white font-mono">
                     <img className="w-5 absolute" src={`/${languages[i]}.svg`} alt={`${languageData.language.types[i]}`}/>
-                    <span className="ml-4">{languages[i]}</span>
+                    <span className={`ml-${marginLeft}`}>{languages[i]}</span>
                 </button>
             );
         }

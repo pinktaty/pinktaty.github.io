@@ -1,5 +1,6 @@
 {
   "definition": "no",
+  "image": "/no.svg",
   "aboutMe": {
     "title": "Om meg",
     "adjectives": ["programmerer", "webutvikler", "vitenskapsmann"],
