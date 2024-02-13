@@ -17,7 +17,7 @@ function MenuLanguages() {
 
     const {languageData} = useContext(LanguageContext);
 
-    const buttonGenerator = (languages) => {
+    const createButtons = (languages) => {
         const buttons = [];
         for(let i = 0; i < languages.length; i++) {
             buttons.push(
@@ -36,7 +36,7 @@ function MenuLanguages() {
             <button onClick={toggleMenu}
                     className="flex items-center mr-1.5 font-mono">{languageData.language.title}</button>
             <div className={`${open ? 'block' : 'hidden'} absolute mt-2 right-0 w-22 sm:mt-3`}>
-                {buttonGenerator(["en", "es", "no"])}
+                {createButtons(["en", "es", "no"])}
             </div>
         </div>
     );
