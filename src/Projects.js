@@ -2,6 +2,8 @@ import {useCallback, useContext, useEffect, useRef, useState} from "react";
 import {LanguageContext} from "./LanguageContext";
 
 const colors = ['black','#FDFFA3','#A2E4A2','#59B4C3','#F59AF0'];
+const initialDegrees = [-24, -18, -12, -6, 0];
+const limits = [342, 336, 330, 324, 318];
 
 function Projects({setBodyColor}) {
     const timeOutFirstAnimation = useRef(null);
@@ -9,7 +11,8 @@ function Projects({setBodyColor}) {
 
     // Index project es el proyecto que se puede mover.
     const [indexProject, setIndexProject] = useState(4);
-    const [degreesProject, setDegreesProject] = useState([336, 342, 348, 354, 0]);
+    const [degreesProject, setDegreesProject] = useState(initialDegrees);
+    const [opacityProject, setOpacityProject] = useState([1, 1, 1, 1, 1]);
     const [gotHovered, setGotHovered] = useState([false, false, false, false]);
     const [upProject, setUpProject] = useState([false, false, false, false, false]);
     const [isClicked, setIsClicked] = useState([false, false, false, false, false]);
@@ -43,19 +46,23 @@ function Projects({setBodyColor}) {
         // El último en ser creado es el que estará hasta arriba.
         const circles = [];
 
-        for(let i = 0; i < numCircles; i++){
-           circles.push(
+        // me hace posible solamente el bucle, no la renderizacion en el orden
+        // requerido
+        for(let i = indexProject, j = 0; j < numCircles+1; i++, j++) {
+           if(i === numCircles) i = 0;
+            circles.push(
                <div
                    onMouseEnter={() => updateHover(i)}
                    className="absolute circle rounded-full w-[24rem] h-[24rem] items-center flex justify-center"
                    style={{
                        backgroundColor: colors[i],
+                       opacity: opacityProject[i],
                        transformOrigin: "12% 20%",
                        transform: `rotate(${degreesProject[i]}deg)`
                    }}
                >
                    <div>
-                       <h1 className="text-black">Projects</h1>
+                       <h1 className="text-black">{i}</h1>
                    </div>
                </div>
            );
@@ -66,20 +73,49 @@ function Projects({setBodyColor}) {
 
     const completeAnimation = useCallback(() => {
         setBodyColor(colors[indexProject]);
-        if (degreesProject[indexProject] < 330) {
+        if (degreesProject[indexProject] < limits[indexProject]) {
             timeOutCompleteAnimation.current = setTimeout(() => {
                 setDegreesProject(prevState => {
                     const newDegrees = [...prevState];
                     newDegrees[indexProject] += 3;
+                    for(let i = indexProject, j = initialDegrees.length-1; j > 0; i--){
+                        if(i === -1) i = initialDegrees.length-1;
+                        if(i !== indexProject){
+                            if(newDegrees[i] !== initialDegrees[j]){
+                                newDegrees[i] += 1;
+                            }
+                            j--;
+                        }
+                    }
                     return newDegrees;
-                });}, 30);
+                });
+                setOpacityProject( prevState => {
+                    const newOpacity = [...prevState];
+                    newOpacity[indexProject] -= 0.02;
+                    return newOpacity;
+                });
+                }, 30);
         } else {
             setIsClicked(prevState => {
                 const newIsClicked  = [...prevState];
                 newIsClicked[indexProject] = false;
+                setDegreesProject(prevState => {
+                    const newDegrees = [...prevState];
+                    newDegrees[indexProject] = initialDegrees[0];
+                    return newDegrees;
+                })
+                setOpacityProject( prevState => {
+                    const newOpacity = [...prevState];
+                    newOpacity[indexProject] = 1;
+                    return newOpacity;
+                });
+                setIndexProject(prevState => {
+                    return prevState !== 0 ? prevState - 1 : 4;
+                });
                 return newIsClicked;
             });
         }
+
     }, [degreesProject, indexProject, timeOutCompleteAnimation, setBodyColor]);
 
     const hoverAnimation = useCallback(() => {
@@ -108,7 +144,7 @@ function Projects({setBodyColor}) {
                     }
                     return newDegrees;
                 });
-            }, 50);
+            }, 35);
         }
     }, [degreesProject, indexProject,  setDegreesProject, timeOutFirstAnimation, upProject]);
 
