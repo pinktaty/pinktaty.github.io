@@ -9,7 +9,7 @@ function Projects({setBodyColor}) {
     const timeOutFirstAnimation = useRef(null);
     const timeOutCompleteAnimation = useRef(null);
 
-    // Index project es el proyecto que se puede mover.
+    // Index project is the circle that can move at that time.
     const [indexProject, setIndexProject] = useState(4);
     const [degreesProject, setDegreesProject] = useState(initialDegrees);
     const [opacityProject, setOpacityProject] = useState([1, 1, 1, 1, 1]);
@@ -43,11 +43,9 @@ function Projects({setBodyColor}) {
     }
 
     const createCircles = (numCircles) => {
-        // El último en ser creado es el que estará hasta arriba.
+        // The last to be created is the one on top.
         const circles = [];
 
-        // me hace posible solamente el bucle, no la renderizacion en el orden
-        // requerido
         for(let i = indexProject, j = 0; j < numCircles+1; i++, j++) {
            if(i === numCircles) i = 0;
             circles.push(
@@ -73,11 +71,13 @@ function Projects({setBodyColor}) {
 
     const completeAnimation = useCallback(() => {
         setBodyColor(colors[indexProject]);
+
         if (degreesProject[indexProject] < limits[indexProject]) {
             timeOutCompleteAnimation.current = setTimeout(() => {
                 setDegreesProject(prevState => {
                     const newDegrees = [...prevState];
                     newDegrees[indexProject] += 3;
+                    // Make the behind circles move.
                     for(let i = indexProject, j = initialDegrees.length-1; j > 0; i--){
                         if(i === -1) i = initialDegrees.length-1;
                         if(i !== indexProject){
