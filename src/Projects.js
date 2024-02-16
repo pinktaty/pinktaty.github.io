@@ -3,7 +3,7 @@ import {LanguageContext} from "./LanguageContext";
 
 const colors = ['black','#FDFFA3','#A2E4A2','#59B4C3','#F59AF0'];
 const initialDegrees = [-24, -18, -12, -6, 0];
-const limits = [342, 336, 330, 324, 318];
+const limits = [348, 342, 336, 330, 324];
 
 function Projects({setBodyColor}) {
     const timeOutFirstAnimation = useRef(null);
@@ -61,6 +61,10 @@ function Projects({setBodyColor}) {
                >
                    <div>
                        <h1 className="text-black">{i}</h1>
+                       <img/>
+                       <div>
+
+                       </div>
                    </div>
                </div>
            );
@@ -76,7 +80,7 @@ function Projects({setBodyColor}) {
             timeOutCompleteAnimation.current = setTimeout(() => {
                 setDegreesProject(prevState => {
                     const newDegrees = [...prevState];
-                    newDegrees[indexProject] += 3;
+                    newDegrees[indexProject] += 5;
                     // Make the behind circles move.
                     for(let i = indexProject, j = initialDegrees.length-1; j > 0; i--){
                         if(i === -1) i = initialDegrees.length-1;
@@ -114,6 +118,11 @@ function Projects({setBodyColor}) {
                 });
                 return newIsClicked;
             });
+            /**if(indexProject === degreesProject.length-1){
+                setDegreesProject(() => {
+                    return initialDegrees;
+                });
+            }**/
         }
 
     }, [degreesProject, indexProject, timeOutCompleteAnimation, setBodyColor]);

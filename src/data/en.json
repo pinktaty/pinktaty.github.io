@@ -11,14 +11,29 @@
     "title": "Projects",
     "list": [
       {
-        "title": "Project 1",
-        "description": "Description of Project 1...",
-        "technologies": ["React", "Node.js", "MongoDB"]
+        "title": ".this",
+        "description": "My personal page and first project developed using React.",
+        "technologies": ["React.js", "Tailwind CSS", "Javascript, HTML, CSS"]
       },
       {
-        "title": "Project 2",
+        "title": "iDeal's Web App",
+        "description": "A web app created for a dry cleaner business.",
+        "technologies": ["Bootstrap", "Javascript", "HTML, CSS"]
+      },
+      {
+        "title": "Purrfect Catousine",
+        "description": "A terminal game developed with design patterns",
+        "technologies": ["Java"]
+      },
+      {
+        "title": "Data Structures",
         "description": "Description of Project 2...",
-        "technologies": ["Angular", "Express", "MySQL"]
+        "technologies": ["Java"]
+      },
+      {
+        "title": "More to come...",
+        "description": "Description of Project 2...",
+        "technologies": ["Java", "libGdx", "Next.js", "Rust"]
       }
     ]
   },

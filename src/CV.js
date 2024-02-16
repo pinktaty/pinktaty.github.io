@@ -1,7 +1,10 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {LanguageContext} from "./LanguageContext";
 
 function CV() {
     const [open, setOpen] = useState(false);
+
+    const {languageData} = useContext(LanguageContext);
 
     const toggleMenu = () => {
         setOpen(!open);
@@ -9,8 +12,16 @@ function CV() {
 
     const download = () => {
         const link = document.createElement('a');
-        link.href = '/pdf.pdf';
-        link.download = 'CV.pdf';
+        if(languageData.definition === "no"){
+            link.href = "./CV-no.pdf"
+            link.download = 'LilithDiaz-CV-no.pdf';
+        } else if(languageData.definition === "es"){
+            link.href = "./CV-es.pdf"
+            link.download = 'LilithDiaz-CV-es.pdf';
+        } else {
+            link.href = "./CV-en.pdf"
+            link.download = 'LilithDiaz-CV-en.pdf';
+        }
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

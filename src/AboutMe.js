@@ -16,7 +16,7 @@ function AboutMe() {
         setPresentation(baseText);
         setTyping(true);
         setSelectedText(baseText);
-        setIndexAdjectives(0);
+        //setIndexAdjectives(0);
         setIndexWord(0);
     }, [languageData])
 

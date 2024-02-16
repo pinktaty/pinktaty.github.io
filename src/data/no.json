@@ -13,12 +13,12 @@
     "title": "Prosjekter",
     "list": [
       {
-        "title": "Project 1",
+        "title": ".this",
         "description": "Description of Project 1...",
         "technologies": ["React", "Node.js", "MongoDB"]
       },
       {
-        "title": "Project 2",
+        "title": "Nettapp for iDeal",
         "description": "Description of Project 2...",
         "technologies": ["Angular", "Express", "MySQL"]
       }
