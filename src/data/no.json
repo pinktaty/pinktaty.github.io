@@ -35,7 +35,7 @@
       {
         "title": ".this",
         "description": "Min personlige side og første prosjekt utviklet med React.",
-        "technologies": ["React.js", "Tailwind CSS", "Javascript, HTML, CSS"]
+        "technologies": ["React.js", "Tailwind CSS", "Javascript, HTML\nCSS"]
       }
     ]
   },

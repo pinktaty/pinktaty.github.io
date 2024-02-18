@@ -1,7 +1,7 @@
 import {useCallback, useContext, useEffect, useRef, useState} from "react";
 import {LanguageContext} from "./LanguageContext";
 
-const colors = ['black','#FDFFA3','#A2E4A2','#59B4C3','#F59AF0'];
+const colors = ['black','#FDD760','#A2E4A2','#59B4C3','#F59AF0'];
 const initialDegrees = [-24, -18, -12, -6, 0];
 const limits = [348, 342, 336, 330, 324];
 const links = ["#", "https://github.com/pinktaty/DataStructures", "https://github.com/pinktaty/GatocinaPurrfecta", "https://pinktaty.github.io/iDeal-web", "#"]
@@ -50,7 +50,7 @@ function Projects({setBodyColor}) {
         const techs = [];
         for (let i = 0; i < project.technologies.length; i++) {
             techs.push(
-                <li className="list-none mx-2">{`${project.technologies[i]}`}</li>
+                <li className="list-none bg-gray-500 bg-opacity-30 p-2 m-1 text-white rounded-3xl font-bold">{`${project.technologies[i]}`}</li>
             );
         }
         return techs;
@@ -73,9 +73,9 @@ function Projects({setBodyColor}) {
                        transform: `rotate(${degreesProject[i]}deg)`
                    }}
                >
-                   <div className="flex flex-col justify-center items-center">
+                   <div className="flex flex-col justify-center items-center font-mono">
                        <a href={links[i]} target="_blank" rel="noopener noreferrer">
-                           <h1 className="text-white font-bold font-press-start text-xs sm:text-xl mx-6 text-center hover:text-black">{`${languageData.projects.list[i].title}`}</h1>
+                           <h1 className="text-white font-bold font-press-start text-xs sm:text-xl mx-12 text-center hover:text-black mb-3">{`${languageData.projects.list[i].title}`}</h1>
                        </a>
                        <div className="text-center ml-3 mr-3 font-mono">
                            <h3 className="text-xs sm:text-base mr-10 ml-10 mt-4">{`${languageData.projects.list[i].description}`}</h3>
