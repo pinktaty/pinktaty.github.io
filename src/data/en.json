@@ -28,12 +28,12 @@
       {
         "title": "iDeal's Web App",
         "description": "A web app designed and developed for a dry cleaner business.",
-        "technologies": ["Bootstrap", "Javascript", "HTML, CSS"]
+        "technologies": ["Bootstrap", "Javascript", "HTML", "CSS"]
       },
       {
         "title": ".this",
         "description": "My personal page and first project developed using React.",
-        "technologies": ["React.js", "Tailwind CSS", "Javascript, HTML, CSS"]
+        "technologies": ["React.js", "Tailwind CSS", "Javascript", " HTML", "CSS"]
       }
     ]
   },

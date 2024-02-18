@@ -14,7 +14,7 @@ function App() {
 
   return (
       <div
-          className="h-[115vh]"
+          className="h-[124vh] sm:h-[115vh]"
           style={{backgroundColor: bodyColor}}
       >
           <nav className="navbar p-8">
