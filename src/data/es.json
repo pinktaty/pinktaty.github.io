@@ -12,14 +12,29 @@
     "title": "Proyectos",
     "list": [
       {
-        "title": ".this",
-        "description": "Description of Project 1...",
-        "technologies": ["React", "Node.js", "MongoDB"]
+        "title": "Próximamente...",
+        "description": "Proyectos en desarrollo.",
+        "technologies": ["Java", "libGdx", "Next.js", "Rust"]
       },
       {
-        "title": "Web App para iDeal",
-        "description": "Description of Project 2...",
-        "technologies": ["Angular", "Express", "MySQL"]
+        "title": "Data Structures",
+        "description": "Estructuras de datos programadas en Java.",
+        "technologies": ["Java"]
+      },
+      {
+        "title": "Purrfect Catousine",
+        "description": "Un juego de terminal programado por medio de patrondes de diseño.",
+        "technologies": ["Java"]
+      },
+      {
+        "title": "iDeal's Web App",
+        "description": "Una web app diseñada y desarrollada para un negocio de tintorería.",
+        "technologies": ["Bootstrap", "Javascript", "HTML, CSS"]
+      },
+      {
+        "title": ".this",
+        "description": "My página personal y primer proyecto usando React.",
+        "technologies": ["React.js", "Tailwind CSS", "Javascript, HTML, CSS"]
       }
     ]
   },

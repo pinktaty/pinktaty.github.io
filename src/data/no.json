@@ -13,14 +13,29 @@
     "title": "Prosjekter",
     "list": [
       {
-        "title": ".this",
-        "description": "Description of Project 1...",
-        "technologies": ["React", "Node.js", "MongoDB"]
+        "title": "Mer kommer",
+        "description": "Description of Project 2...",
+        "technologies": ["Java", "libGdx", "Next.js", "Rust"]
       },
       {
-        "title": "Nettapp for iDeal",
-        "description": "Description of Project 2...",
-        "technologies": ["Angular", "Express", "MySQL"]
+        "title": "Datastrukturer",
+        "description": "Datastrukturer programmert i Java.",
+        "technologies": ["Java"]
+      },
+      {
+        "title": "Purrfect Catousine",
+        "description": "Et terminalspill utviklet med designmønstre.",
+        "technologies": ["Java"]
+      },
+      {
+        "title": "iDeal's Web App",
+        "description": "En nettapplikasjon skapt for en renseribedrift.",
+        "technologies": ["Bootstrap", "Javascript", "HTML, CSS"]
+      },
+      {
+        "title": ".this",
+        "description": "Min personlige side og første prosjekt utviklet med React.",
+        "technologies": ["React.js", "Tailwind CSS", "Javascript, HTML, CSS"]
       }
     ]
   },

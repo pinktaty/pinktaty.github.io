@@ -11,29 +11,29 @@
     "title": "Projects",
     "list": [
       {
-        "title": ".this",
-        "description": "My personal page and first project developed using React.",
-        "technologies": ["React.js", "Tailwind CSS", "Javascript, HTML, CSS"]
-      },
-      {
-        "title": "iDeal's Web App",
-        "description": "A web app created for a dry cleaner business.",
-        "technologies": ["Bootstrap", "Javascript", "HTML, CSS"]
-      },
-      {
-        "title": "Purrfect Catousine",
-        "description": "A terminal game developed with design patterns",
-        "technologies": ["Java"]
+        "title": "More to come...",
+        "description": "Projects in development.",
+        "technologies": ["Java", "libGdx", "Next.js", "Rust"]
       },
       {
         "title": "Data Structures",
-        "description": "Description of Project 2...",
+        "description": "Data structures programmed in Java.",
         "technologies": ["Java"]
       },
       {
-        "title": "More to come...",
-        "description": "Description of Project 2...",
-        "technologies": ["Java", "libGdx", "Next.js", "Rust"]
+        "title": "Purrfect Catousine",
+        "description": "A terminal game coded using designed patterns.",
+        "technologies": ["Java"]
+      },
+      {
+        "title": "iDeal's Web App",
+        "description": "A web app designed and developed for a dry cleaner business.",
+        "technologies": ["Bootstrap", "Javascript", "HTML, CSS"]
+      },
+      {
+        "title": ".this",
+        "description": "My personal page and first project developed using React.",
+        "technologies": ["React.js", "Tailwind CSS", "Javascript, HTML, CSS"]
       }
     ]
   },

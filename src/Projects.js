@@ -4,6 +4,10 @@ import {LanguageContext} from "./LanguageContext";
 const colors = ['black','#FDFFA3','#A2E4A2','#59B4C3','#F59AF0'];
 const initialDegrees = [-24, -18, -12, -6, 0];
 const limits = [348, 342, 336, 330, 324];
+const links = ["", "", "", "", ""]
+const images = ["", "", "", "", ""]
+
+
 
 function Projects({setBodyColor}) {
     const timeOutFirstAnimation = useRef(null);
@@ -42,6 +46,15 @@ function Projects({setBodyColor}) {
         }
     }
 
+    const auxCreateCircles = (numTechs, project) => {
+        const techs = [];
+        for (let i = 0; i < numTechs; i++) {
+            techs.push(
+                <li>{}</li>
+            );
+        }
+    }
+
     const createCircles = (numCircles) => {
         // The last to be created is the one on top.
         const circles = [];
@@ -51,7 +64,7 @@ function Projects({setBodyColor}) {
             circles.push(
                <div
                    onMouseEnter={() => updateHover(i)}
-                   className="absolute circle rounded-full w-[24rem] h-[24rem] items-center flex justify-center"
+                   className="absolute circle rounded-full w-[15rem] h-[15rem] sm:w-[24rem] sm:h-[24rem] items-center flex justify-center"
                    style={{
                        backgroundColor: colors[i],
                        opacity: opacityProject[i],
@@ -59,11 +72,17 @@ function Projects({setBodyColor}) {
                        transform: `rotate(${degreesProject[i]}deg)`
                    }}
                >
-                   <div>
-                       <h1 className="text-black">{i}</h1>
-                       <img/>
+                   <div className="flex flex-col justify-center items-center">
+                       <h1 className="text-white font-bold font-press-start text-xs sm:text-xl">{`${languageData.projects.list[i].title}`}</h1>
                        <div>
-
+                           <a href="">
+                               <img/>
+                           </a>
+                       </div>
+                       <div className="text-center ml-3 mr-3 font-mono">
+                           <h3>{`${languageData.projects.list[i].description}`}</h3>
+                           <div>
+                           </div>
                        </div>
                    </div>
                </div>
@@ -98,6 +117,11 @@ function Projects({setBodyColor}) {
                     newOpacity[indexProject] -= 0.02;
                     return newOpacity;
                 });
+                setGotHovered(prevState => {
+                    const newHovered = [...prevState];
+                    newHovered[indexProject] = false;
+                    return newHovered;
+                })
                 }, 30);
         } else {
             setIsClicked(prevState => {
@@ -170,7 +194,7 @@ function Projects({setBodyColor}) {
     return(
         <div
             onClick={() => updateClick()}
-            className="projects justify-center flex h-screen items-center"
+            className="projects justify-center flex h-[38rem] sm:h-screen items-center"
         >
             {createCircles(5)}
         </div>
