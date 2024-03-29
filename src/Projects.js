@@ -4,7 +4,7 @@ import {LanguageContext} from "./LanguageContext";
 const colors = ['black','#FDD760','#A2E4A2','#59B4C3','#F59AF0'];
 const initialDegrees = [-24, -18, -12, -6, 0];
 const limits = [348, 342, 336, 330, 324];
-const links = ["#", "https://github.com/pinktaty/DataStructures", "https://github.com/pinktaty/GatocinaPurrfecta", "https://pinktaty.github.io/iDeal-web", "#"]
+const links = ["https://www.linkedin.com/in/diaz-lilith04/", "https://github.com/pinktaty/DataStructures", "https://github.com/pinktaty/GatocinaPurrfecta", "https://pinktaty.github.io/iDeal-web", "#"]
 
 
 
@@ -50,7 +50,7 @@ function Projects({setBodyColor}) {
         const techs = [];
         for (let i = 0; i < project.technologies.length; i++) {
             techs.push(
-                <li className="list-none bg-gray-500 bg-opacity-30 p-2 m-1 text-white rounded-3xl font-bold">{`${project.technologies[i]}`}</li>
+                <li className="list-none bg-gray-500 bg-opacity-30 p-1 sm:p-2 m-1 text-white text-[9px] sm:text-xs rounded-3xl font-bold">{`${project.technologies[i]}`}</li>
             );
         }
         return techs;
@@ -65,7 +65,7 @@ function Projects({setBodyColor}) {
             circles.push(
                <div
                    onMouseEnter={() => updateHover(i)}
-                   className="absolute circle rounded-full w-[15rem] h-[15rem] sm:w-[24rem] sm:h-[24rem] items-center flex justify-center"
+                   className="absolute circle rounded-full w-[15.5rem] h-[15.5rem] sm:w-[24rem] sm:h-[24rem] items-center flex justify-center"
                    style={{
                        backgroundColor: colors[i],
                        opacity: opacityProject[i],
@@ -75,12 +75,12 @@ function Projects({setBodyColor}) {
                >
                    <div className="flex flex-col justify-center items-center font-mono">
                        <a href={links[i]} target="_blank" rel="noopener noreferrer">
-                           <h1 className="text-white font-bold font-press-start text-xs sm:text-xl mx-12 text-center hover:text-black mb-3">{`${languageData.projects.list[i].title}`}</h1>
+                           <h1 className="text-white font-bold font-press-start text-xs sm:text-xl mx-12 text-center hover:text-black mb-3 pt-5 sm:pt-0">{`${languageData.projects.list[i].title}`}</h1>
                        </a>
                        <div className="text-center ml-3 mr-3 font-mono">
-                           <h3 className="text-xs sm:text-base mr-10 ml-10 mt-4">{`${languageData.projects.list[i].description}`}</h3>
-                           <div className="flex justify-center items-center mt-8 mx-8">
-                               <ul className="flex text-xs">
+                           <h3 className="text-xs sm:text-base pr-10 pl-10 sm:mt-4">{`${languageData.projects.list[i].description}`}</h3>
+                           <div className="flex justify-center items-center mt-3 sm:mt-8 mx-8">
+                               <ul className="flex flex-wrap justify-center items-center">
                                    {auxCreateTechs(i)}
                                </ul>
                            </div>
@@ -190,7 +190,7 @@ function Projects({setBodyColor}) {
     return(
         <div
             onClick={() => updateClick()}
-            className="projects justify-center flex h-[38rem] sm:h-screen items-center"
+            className="projects justify-center flex h-[33rem] sm:h-screen items-center"
         >
             {createCircles(5)}
         </div>

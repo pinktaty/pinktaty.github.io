@@ -32,7 +32,7 @@
       },
       {
         "title": ".this",
-        "description": "My personal page and first project developed using React.",
+        "description": "My personal and first page developed using React.",
         "technologies": ["React.js", "Tailwind CSS", "Javascript", " HTML\nCSS"]
       }
     ]
