@@ -3,7 +3,9 @@ import {LanguageContext} from "./LanguageContext";
 
 const colors = ['black','#FDD760','#A2E4A2','#59B4C3','#F59AF0'];
 const initialDegrees = [-24, -18, -12, -6, 0];
-const limits = [348, 342, 336, 330, 324];
+//const limits = [348, 342, 336, 330, 324];
+// Since the limit is used for a comparation os the type <, we sum 1 to the quantities.
+const limits = [349, 343, 337, 331, 325];
 const links = ["https://www.linkedin.com/in/diaz-lilith04/", "https://github.com/pinktaty/DataStructures", "https://github.com/pinktaty/GatocinaPurrfecta", "https://pinktaty.github.io/iDeal-web", "#"]
 
 
@@ -100,8 +102,12 @@ function Projects({setBodyColor}) {
             timeOutCompleteAnimation.current = setTimeout(() => {
                 setDegreesProject(prevState => {
                     const newDegrees = [...prevState];
-                    newDegrees[indexProject] += 5;
+                    // todo: Inicialmente se movía en 5
+                    newDegrees[indexProject] += 6;
                     // Make the behind circles move.
+                    // todo: aquí está el problema
+                    // todo: quizá es como está definido el for
+                    // todo: es la condicional
                     for(let i = indexProject, j = initialDegrees.length-1; j > 0; i--){
                         if(i === -1) i = initialDegrees.length-1;
                         if(i !== indexProject){
